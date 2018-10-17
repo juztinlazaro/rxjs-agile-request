@@ -7,12 +7,14 @@ A lazy utils request method for get, post, patch, put, and delete.
 
 Please check the documentation here.
 
-
 #### How to install?
+
 `yarn add rxjs-agile-request`
 
 #### How to use?
+
 import your methods in request.
+
 ```
 import {
   getRequest,
@@ -24,14 +26,14 @@ import {
 ```
 
 ###### create a object action and pass it in the agileRequest method
-```
 
+```
 const getBlogUrl = `${jsonplacehoder}/posts21`;
 export const getBlogEpic = action$ =>
   action$.ofType(TYPES.GET_BLOG_EPIC).switchMap(() => {
     const loading = ACTION.getBlogLoading();
     const success = ACTION.getBlogSuccess;
-    const cancel = action$.ofType(TYPES.GET_BLOG_CANCEL);
+    const cancel = ACTION.getBlogCancel
     const error = ACTION.getBlogError;
 
     const ObjectActions = {
@@ -51,10 +53,11 @@ export const getBlogEpic = action$ =>
 ```
 
 #### Actions
-| Actions        |      TYPE         |    DESCRIPTION             |
-| ------------- |:-------------:|:-------------:|
-| loading      | required | return boolean |
-| success     | required | return object   |
-| error | required | return object     |
-|cancel | optional | return nothing just is this action to componentWillUnmount     |
-|retry |  optional | is a function that as a callback of object of error, it must return a boolean so the agileRequest wil know where to retry    |
+
+| Actions |   TYPE   |                                                        DESCRIPTION                                                        |
+| ------- | :------: | :-----------------------------------------------------------------------------------------------------------------------: |
+| loading | required |                                                      return boolean                                                       |
+| success | required |                                                       return object                                                       |
+| error   | required |                                                       return object                                                       |
+| cancel  | optional |                                return nothing just is this action to componentWillUnmount                                 |
+| retry   | optional | is a function that as a callback of object of error, it must return a boolean so the agileRequest wil know where to retry |

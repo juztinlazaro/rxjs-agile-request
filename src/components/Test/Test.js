@@ -63,14 +63,38 @@ class Test extends Component {
         <h3>Yow! im a test component and route</h3>
 
         <button onClick={this.onGetPost}>get request</button>
+        <button onClick={this.props.getBlogCancel}>cancel get request</button>
+        <br />
+        <br />
+        <br />
 
         <button onClick={this.onPostPost}>post request</button>
+        <button onClick={this.props.postBlogCancel}>cancel post request</button>
+        <br />
+        <br />
+        <br />
 
         <button onClick={this.onPatchPost}>patch request</button>
+        <button onClick={this.props.patchBlogCancel}>
+          cancel patch request
+        </button>
+        <br />
+        <br />
+        <br />
 
         <button onClick={this.onPutPost}>put request</button>
+        <button onClick={this.props.putBlogCancel}>cancel put request</button>
+        <br />
+        <br />
+        <br />
 
         <button onClick={this.onDeletePost}>delete request</button>
+        <button onClick={this.props.deleteBlogCancel}>
+          cancel delete request
+        </button>
+        <br />
+        <br />
+        <br />
       </section>
     );
   }

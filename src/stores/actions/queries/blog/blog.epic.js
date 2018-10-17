@@ -38,7 +38,7 @@ export const postBlogEpic = action$ =>
   action$.ofType(TYPES.POST_BLOG_EPIC).switchMap(action => {
     const loading = ACTION.postBlogLoading();
     const success = ACTION.postBlogSuccess;
-    const cancel = action$.ofType(TYPES.POST_BLOG_CANCEL);
+    const cancel = ACTION.getBlogCancel;
     const error = ACTION.postBlogError;
     const formBody = action.payload;
 
@@ -60,7 +60,7 @@ export const patchBlogEpic = action$ =>
   action$.ofType(TYPES.PATCH_BLOG_EPIC).switchMap(action => {
     const loading = ACTION.patchBlogLoading();
     const success = ACTION.patchBlogSuccess;
-    const cancel = action$.ofType(TYPES.PATCH_BLOG_CANCEL);
+    const cancel = ACTION.patchBlogCancel;
     const error = ACTION.patchBlogError;
     const formBody = action.payload;
 
@@ -82,7 +82,7 @@ export const putBlogEpic = action$ =>
   action$.ofType(TYPES.PUT_BLOG_EPIC).switchMap(action => {
     const loading = ACTION.putBlogLoading();
     const success = ACTION.putBlogSuccess;
-    const cancel = action$.ofType(TYPES.PUT_BLOG_CANCEL);
+    const cancel = ACTION.putBlogCancel;
     const error = ACTION.putBlogError;
     const formBody = action.payload;
 
@@ -104,7 +104,7 @@ export const deleteBlogEpic = action$ =>
   action$.ofType(TYPES.DELETE_BLOG_EPIC).switchMap(action => {
     const loading = ACTION.deleteBlogLoading();
     const success = ACTION.deleteBlogSuccess;
-    const cancel = action$.ofType(TYPES.DELETE_BLOG_CANCEL);
+    const cancel = ACTION.deleteBlogCancel;
     const error = ACTION.deleteBlogError;
     const url = `${deleteBlogUrl}/${action.payload}`;
 
