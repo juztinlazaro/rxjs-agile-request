@@ -1,0 +1,15 @@
+{
+  "src": {
+    "tagName": "v%s",
+    "commitArgs": "-S"
+  },
+  "requireUpstream": false,
+  "requireCleanWorkingDir": false,
+  "github": {
+    "release": true,
+    "releaseName": "Release v%s"
+  },
+  "npm": {
+    "tag": "latest"
+  }
+}

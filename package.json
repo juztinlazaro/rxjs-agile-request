@@ -1,0 +1,57 @@
+{
+  "name": "rxjs-agile-request",
+  "version": "0.0.1",
+  "description": "A Complete lazy http request utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config webpack.dev.config.js --open --color",
+    "build": "rimraf build && webpack --config webpack.prod.config.js --progress --profile --color",
+    "build:lib": "babel src/agileRequest -d lib",
+    "build:style": "sass css/main.scss:css/main.css",
+    "release": "npm run build:lib && release-it",
+    "docx": "serve -s build --open"
+  },
+  "author": "Justin Lazaro",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "core-js": "^2.5.3",
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.9",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
+    "postcss-loader": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "serve": "^6.4.11",
+    "style-loader": "^0.19.1",
+    "sw-precache-webpack-plugin": "^0.11.4",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-glob": "^2.0.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "immutable": "^3.8.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.6.1",
+    "redux-observable": "0.17.0",
+    "release-it": "^7.6.1",
+    "rxjs": "5.5.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-Test ui:Test ui/Test ui_UIKit.git"
+  }
+}
