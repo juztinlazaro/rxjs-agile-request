@@ -38,20 +38,40 @@ class Test extends Component {
     this.props.getBlogEpic();
   };
 
+  onCancelGetPost = () => {
+    this.props.getBlogCancel();
+  };
+
   onPostPost = () => {
     this.props.postBlogEpic(this.state.data);
+  };
+
+  onCancelPostBlog = () => {
+    this.props.postBlogCancel();
   };
 
   onPatchPost = () => {
     this.props.patchBlogEpic(this.state.data);
   };
 
+  onCancelPatchBlog = () => {
+    this.props.patchBlogCancel();
+  };
+
   onPutPost = () => {
     this.props.putBlogEpic(this.state.data);
   };
 
+  onCancelputBlog = () => {
+    this.props.putBlogCancel();
+  };
+
   onDeletePost = () => {
     this.props.deleteBlogEpic(2);
+  };
+
+  onCancelDeleteBlog = () => {
+    this.props.deleteBlogCancel();
   };
 
   render() {
@@ -63,35 +83,31 @@ class Test extends Component {
         <h3>Yow! im a test component and route</h3>
 
         <button onClick={this.onGetPost}>get request</button>
-        <button onClick={this.props.getBlogCancel}>cancel get request</button>
+        <button onClick={this.onCancelGetPost}>cancel get request</button>
         <br />
         <br />
         <br />
 
         <button onClick={this.onPostPost}>post request</button>
-        <button onClick={this.props.postBlogCancel}>cancel post request</button>
+        <button onClick={this.onCancelPostBlog}>cancel post request</button>
         <br />
         <br />
         <br />
 
         <button onClick={this.onPatchPost}>patch request</button>
-        <button onClick={this.props.patchBlogCancel}>
-          cancel patch request
-        </button>
+        <button onClick={this.onCancelPatchBlog}>cancel patch request</button>
         <br />
         <br />
         <br />
 
         <button onClick={this.onPutPost}>put request</button>
-        <button onClick={this.props.putBlogCancel}>cancel put request</button>
+        <button onClick={this.onCancelPutBlog}>cancel put request</button>
         <br />
         <br />
         <br />
 
         <button onClick={this.onDeletePost}>delete request</button>
-        <button onClick={this.props.deleteBlogCancel}>
-          cancel delete request
-        </button>
+        <button onClick={this.onCancelDeleteBlog}>cancel delete request</button>
         <br />
         <br />
         <br />
