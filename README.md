@@ -9,7 +9,7 @@ Please check the documentation here.
 
 
 #### How to install?
-`yarn add @ubidy_devs/agile-request`
+`yarn add rxjs-agile-request`
 
 #### How to use?
 import your methods in request.
@@ -20,7 +20,7 @@ import {
   patchReuqest,
   putReuqest,
   deleteRequest,
-} from '@ubidy_dev/lib/agileRequest';
+} from 'rxjs-agile-request';
 ```
 
 ###### create a object action and pass it in the agileRequest method
