@@ -1,7 +1,27 @@
+import { Observable } from 'rxjs';
 import { ajax } from 'rxjs/observable/dom/ajax';
 import { concat } from 'rxjs/observable/concat';
 import ajaxCall from './ajax';
 import { of } from 'rxjs/observable/of';
+
+const getRequest2 = actions => {
+  console.log(actions);
+  return actions.action.ofType(actions.epic).switchMap(() => {
+    const call = ajax.get(actions.url, actions.header);
+    const loading = of(actions.loading());
+
+    return concat(
+      loading,
+      ajaxCall(
+        call,
+        actions.success,
+        actions.cancel,
+        actions.error,
+        actions.retry,
+      ),
+    );
+  });
+};
 
 const getRequest = actions => {
   const call = ajax.get(actions.url, actions.header);
@@ -78,4 +98,11 @@ const deleteRequest = actions => {
   );
 };
 
-export { getRequest, postRequest, patchRequest, putRequest, deleteRequest };
+export {
+  getRequest,
+  getRequest2,
+  postRequest,
+  patchRequest,
+  putRequest,
+  deleteRequest,
+};
