@@ -41,7 +41,7 @@ const ajaxCall = (ajaxreq, success, cancel, error, retry) => {
               /* 
             else all error will retry 
           */
-              return of(error.status).delay(1000);
+              return of(error.status);
             }
           })
           // we decide to retry 5x

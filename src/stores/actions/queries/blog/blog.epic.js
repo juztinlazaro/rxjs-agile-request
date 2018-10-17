@@ -12,10 +12,10 @@ import {
   deleteRequest,
 } from 'agileRequest';
 
-const getBlogUrl = `${jsonplacehoder}/posts/1`;
+const getBlogUrl = `${jsonplacehoder}/post321s/1`;
 export const getBlogEpic = action$ =>
   action$.ofType(TYPES.GET_BLOG_EPIC).switchMap(() => {
-    const loading = of(ACTION.getBlogLoading());
+    const loading = ACTION.getBlogLoading();
     const success = ACTION.getBlogSuccess;
     const cancel = action$.ofType(TYPES.GET_BLOG_CANCEL);
     const error = ACTION.getBlogError;

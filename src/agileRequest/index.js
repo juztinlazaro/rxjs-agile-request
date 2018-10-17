@@ -1,6 +1,7 @@
 import { ajax } from 'rxjs/observable/dom/ajax';
 import { concat } from 'rxjs/observable/concat';
 import ajaxCall from './ajax';
+import { of } from 'rxjs/observable/of';
 
 const getRequest = actions => {
   const call = ajax.get(actions.url, actions.header);
@@ -10,7 +11,7 @@ const getRequest = actions => {
     );
   }
   return concat(
-    actions.loading,
+    of(actions.loading),
     ajaxCall(
       call,
       actions.success,
@@ -77,4 +78,4 @@ const deleteRequest = actions => {
   );
 };
 
-export { getRequest, postRequest, patchReuqest, putReuqest, deleteRequest };
+export { getRequest, postRequest, patchRequest, putRequest, deleteRequest };
