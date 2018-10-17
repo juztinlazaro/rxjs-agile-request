@@ -61,3 +61,11 @@ export const getBlogEpic = action$ =>
 | error   | required |                                                       return object                                                       |
 | cancel  | optional |                                return nothing just is this action to componentWillUnmount                                 |
 | retry   | optional | is a function that as a callback of object of error, it must return a boolean so the agileRequest wil know where to retry |
+
+# License
+
+Main contributors:
+
+- [Justin Lazaro (juztinlazaro)](https://github.com/juztinlazaro)
+- [Chelzea Louise Salvador (juztinlazaro)](https://github.com/juztinlazaro) - documentations
+- [Nicho Guimbaolibot (juztinlazaro)](https://github.com/juztinlazaro) - for coining the project name.
