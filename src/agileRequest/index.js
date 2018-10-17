@@ -25,7 +25,7 @@ const getRequest = actions => {
 const postRequest = actions => {
   const call = ajax.post(actions.url, actions.formBody, actions.header);
   return concat(
-    actions.loading,
+    of(actions.loading),
     ajaxCall(
       call,
       actions.success,
@@ -39,7 +39,7 @@ const postRequest = actions => {
 const patchRequest = actions => {
   const call = ajax.patch(actions.url, actions.formBody, actions.header);
   return concat(
-    actions.loading,
+    of(actions.loading),
     ajaxCall(
       call,
       actions.success,
@@ -53,7 +53,7 @@ const patchRequest = actions => {
 const putRequest = actions => {
   const call = ajax.patch(actions.url, actions.formBody, actions.header);
   return concat(
-    actions.loading,
+    of(actions.loading),
     ajaxCall(
       call,
       actions.success,
@@ -67,7 +67,7 @@ const putRequest = actions => {
 const deleteRequest = actions => {
   const call = ajax.delete(actions.url, actions.header);
   return concat(
-    actions.loading,
+    of(actions.loading),
     ajaxCall(
       call,
       actions.success,

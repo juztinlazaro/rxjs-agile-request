@@ -1,5 +1,3 @@
-import { of } from 'rxjs/observable/of';
-import concat from 'rxjs/observable/concat';
 import * as TYPES from './types';
 import { jsonplacehoder } from 'Common/constants/api';
 import { headers } from 'Common/constants/headers';
@@ -38,7 +36,7 @@ export const getBlogEpic = action$ =>
 const postBlogUrl = 'https://jsonplaceholder.typicode.com/posts';
 export const postBlogEpic = action$ =>
   action$.ofType(TYPES.POST_BLOG_EPIC).switchMap(action => {
-    const loading = of(ACTION.postBlogLoading());
+    const loading = ACTION.postBlogLoading();
     const success = ACTION.postBlogSuccess;
     const cancel = action$.ofType(TYPES.POST_BLOG_CANCEL);
     const error = ACTION.postBlogError;
@@ -60,7 +58,7 @@ export const postBlogEpic = action$ =>
 const patchBlogUrl = 'https://jsonplaceholder.typicode.com/posts/1';
 export const patchBlogEpic = action$ =>
   action$.ofType(TYPES.PATCH_BLOG_EPIC).switchMap(action => {
-    const loading = of(ACTION.patchBlogLoading());
+    const loading = ACTION.patchBlogLoading();
     const success = ACTION.patchBlogSuccess;
     const cancel = action$.ofType(TYPES.PATCH_BLOG_CANCEL);
     const error = ACTION.patchBlogError;
@@ -76,13 +74,13 @@ export const patchBlogEpic = action$ =>
       formBody,
     };
 
-    return patchReuqest(ObjectActions);
+    return patchRequest(ObjectActions);
   });
 
 const putBlogUrl = 'https://jsonplaceholder.typicode.com/posts/1';
 export const putBlogEpic = action$ =>
   action$.ofType(TYPES.PUT_BLOG_EPIC).switchMap(action => {
-    const loading = of(ACTION.putBlogLoading());
+    const loading = ACTION.putBlogLoading();
     const success = ACTION.putBlogSuccess;
     const cancel = action$.ofType(TYPES.PUT_BLOG_CANCEL);
     const error = ACTION.putBlogError;
@@ -98,13 +96,13 @@ export const putBlogEpic = action$ =>
       formBody,
     };
 
-    return putReuqest(ObjectActions);
+    return putRequest(ObjectActions);
   });
 
 const deleteBlogUrl = 'https://jsonplaceholder.typicode.com/posts';
 export const deleteBlogEpic = action$ =>
   action$.ofType(TYPES.DELETE_BLOG_EPIC).switchMap(action => {
-    const loading = of(ACTION.deleteBlogLoading());
+    const loading = ACTION.deleteBlogLoading();
     const success = ACTION.deleteBlogSuccess;
     const cancel = action$.ofType(TYPES.DELETE_BLOG_CANCEL);
     const error = ACTION.deleteBlogError;

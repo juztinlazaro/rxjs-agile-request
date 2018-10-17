@@ -18,11 +18,7 @@ const ajaxCall = (ajaxreq, success, cancel, error, retry) => {
   return ajaxreq
     .takeUntil(cancel)
     .flatMap(result => {
-      return [
-        success(result.response),
-        success(result.response),
-        success(result.response),
-      ];
+      return [success(result.response)];
     })
     .retryWhen(error => {
       return (
