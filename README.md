@@ -67,5 +67,5 @@ export const getBlogEpic = action$ =>
 Main contributors:
 
 - [Justin Lazaro (juztinlazaro)](https://github.com/juztinlazaro)
-- [Chelzea Louise Salvador (nichoguimbaolibot)](https://github.com/chlzslvdr) - documentations
+- [Chelzea Louise Salvador (chlzslvdr)](https://github.com/chlzslvdr) - documentations
 - [Nicho Guimbaolibot (nichoguimbaolibot)](https://github.com/nichoguimbaolibot) - for the project name.
