@@ -12,7 +12,7 @@ import {
   putBlogCancel,
   patchBlogCancel,
   deleteBlogCancel,
-} from 'Actions/queries/blog/blog.action';
+} from 'Actions/blog/blog.action';
 
 class Test extends Component {
   state = {

@@ -21,6 +21,7 @@ const ajaxCall = (ajaxreq, success, cancel, error, retry) => {
       return [success(result.response)];
     })
     .retryWhen(error => {
+      console.log('here');
       return (
         error
           .flatMap(error => {
