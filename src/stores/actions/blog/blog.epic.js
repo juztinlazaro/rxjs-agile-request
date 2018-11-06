@@ -11,23 +11,28 @@ import {
   getRequest2,
 } from 'agileRequest';
 
-const getBlogUrl = `${jsonplacehoder}/post321s/1`;
-export const getBlogEpic = action$ => {
-  const object = {
-    action: action$,
-    loading: ACTION.getBlogLoading,
-    success: ACTION.getBlogSuccess,
-    error: ACTION.getBlogError,
-    cancel: TYPES.GET_BLOG_CANCEL,
-    epic: TYPES.GET_BLOG_EPIC,
-    url: getBlogUrl,
-    retry: error => {
-      return 404 === error.status;
-    },
-  };
+const getBlogUrl = `${jsonplacehoder}/posts/1`;
+export const getBlogEpic = action$ =>
+  action$.ofType(TYPES.GET_BLOG_EPIC).switchMap(() => {
+    const loading = ACTION.getBlogLoading();
+    const success = [ACTION.getBlogSuccess, ACTION.getBlogSuccess, ACTION.getBlogSuccess];
+    const cancel = action$.ofType(TYPES.GET_BLOG_CANCEL);
+    const error = ACTION.getBlogError;
 
-  return getRequest2(object);
-};
+    const ObjectActions = {
+      url: getBlogUrl,
+      headers,
+      loading,
+      success,
+      cancel,
+      error,
+      retry: error => {
+        return 404 === error.status;
+      },
+    };
+
+    return getRequest(ObjectActions);
+  });
 
 const postBlogUrl = 'https://jsonplaceholder.typicode.com/posts';
 export const postBlogEpic = action$ =>
