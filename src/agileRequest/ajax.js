@@ -18,10 +18,11 @@ const ajaxCall = (ajaxreq, success, cancel, error, retry) => {
   return ajaxreq
     .takeUntil(cancel)
     .flatMap(result => {
-      return [success(result.response)];
+      return success.map(s => {
+        return s(result.data)
+      });
     })
     .retryWhen(error => {
-      console.log('here');
       return (
         error
           .flatMap(error => {
